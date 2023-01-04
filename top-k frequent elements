@@ -1,0 +1,21 @@
+from itertools import groupby
+k=2
+answer=[]
+nums = [4,1,-1,2,-1,2,3]
+sort_nums = set(nums)
+list_nums = list(sort_nums)
+list_nums.sort()
+print(list_nums)
+result={}
+freq = [len(list(group)) for key, group in groupby(sorted(nums))]
+for key in list_nums:
+    for value in freq:
+        result[key] = value
+        freq.remove(value)
+        break
+sort_result = sorted(result.items(), key=lambda x:x[1],reverse=True)[:k]
+print(result)    
+print(sort_result)
+for i in sort_result:
+   answer.append(i[0])
+print(answer)
