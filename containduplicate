@@ -1,0 +1,13 @@
+Conains Duplicate Leetcode 217
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        if len(nums) <= 1:
+            return False
+        set_nums = set(nums)
+        list_nums = list(set_nums)
+        list_nums.sort()
+        nums.sort() 
+        if nums == list_nums:
+            return False
+        else:
+            return True
