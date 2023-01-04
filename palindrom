@@ -1,0 +1,12 @@
+import re
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        if s == " ":
+            return True
+        s_string = "".join(re.findall('(\d+|[A-Za-z]+)', s))
+        word = s_string.lower()
+        palindrom = word[::-1]
+        if word == palindrom:
+            return True
+        else:
+            return False
